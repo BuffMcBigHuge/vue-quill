@@ -83,6 +83,11 @@
             }
 
             Quill.register(GrammarlyInline)
+	    
+	    // Custom Fonts
+	    let Font = Quill.import('formats/font');
+	    Font.whitelist = ['main', 'mono', 'cursive'];
+	    Quill.register(Font, true);
 
             this.editor = new Quill(this.$refs.quill, defaultsDeep(this.config, this.defaultConfig))
 
